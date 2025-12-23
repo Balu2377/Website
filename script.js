@@ -1,14 +1,12 @@
-function toggleLanguage() {
+function toggleLang() {
     const body = document.body;
-    const btn = document.querySelector('.lang-switch');
+    const btn = document.querySelector('.lang-toggle');
     
-    // Toggle the class on the body
-    body.classList.toggle('eng-mode');
+    body.classList.toggle('lang-en');
     
-    // Change the button text
-    if (body.classList.contains('eng-mode')) {
-        btn.innerText = "తెలుగులోకి మార్చండి";
+    if (body.classList.contains('lang-en')) {
+        btn.innerText = "తెలుగు";
     } else {
-        btn.innerText = "Switch to English";
+        btn.innerText = "English";
     }
 }

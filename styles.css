@@ -1,223 +1,109 @@
-/* style.css - Full Professional Edition */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;700&family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
-
+/* style.css */
 :root {
-    --primary: #800000;      /* Deep Maroon */
-    --accent: #FF8C00;       /* Spiritual Saffron */
-    --gold: #FFD700;         /* Divine Gold */
-    --bg-light: #FFF9F0;    /* Soft Cream */
-    --text-dark: #2d2d2d;
-    --white: #ffffff;
-    --shadow: 0 10px 30px rgba(0,0,0,0.15);
+    --maroon: #800000;
+    --saffron: #FF8C00;
+    --gold: #FFD700;
+    --cream: #FFF9F0;
 }
 
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+/* 1. LANGUAGE HIDING LOGIC - STRICT */
+/* Hide English by default when the page loads */
+.en { display: none !important; }
+
+/* When the body has the 'english-mode' class, hide Telugu and show English */
+body.english-mode .te { display: none !important; }
+body.english-mode .en { display: block !important; }
+
+
+/* 2. CORE STYLING & ALIGNMENT */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: 'Poppins', 'Noto Sans Telugu', sans-serif; 
+    background-color: var(--cream);
+    text-align: center; /* Centers all text */
 }
 
-body {
-    font-family: 'Poppins', 'Noto Sans Telugu', sans-serif;
-    background-color: var(--bg-light);
-    color: var(--text-dark);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-/* --- Language Toggle Logic --- */
-.en { display: none; } /* Default: Hide English */
-.te { display: block; }
-
-body.eng-mode .te { display: none; } /* Show English, Hide Telugu */
-body.eng-mode .en { display: block; }
-
-/* --- Header & Hero Section --- */
-header {
+/* 3. HERO HEADER (CENTERED) */
+.hero {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url('https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=1600&q=80');
+                url('https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=1600');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
     position: relative;
-    border-bottom: 10px solid var(--accent);
+    border-bottom: 10px solid var(--saffron);
 }
 
-/* Top Right Navigation */
-nav {
+/* 4. TOP-RIGHT NAVIGATION */
+.top-nav {
     position: absolute;
-    top: 30px;
-    right: 5%;
+    top: 25px;
+    right: 5%; /* Pinned to top right */
     display: flex;
-    gap: 15px;
-    z-index: 1000;
+    gap: 20px;
+    align-items: center;
+    z-index: 100;
 }
 
-.nav-link {
+.nav-links a {
+    color: white;
     text-decoration: none;
-    color: var(--white);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 10px 20px;
-    border-radius: 5px;
     font-weight: 600;
     font-size: 0.9rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
 }
 
-.nav-link:hover {
-    background: var(--accent);
-    border-color: var(--gold);
-}
-
-.lang-btn {
+#langBtn {
     background: var(--gold);
-    color: var(--primary);
+    color: var(--maroon);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
-    font-weight: 700;
+    font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* Centered Title */
-.hero-text {
-    text-align: center;
-    animation: fadeIn 1.5s ease-out;
-}
-
+/* 5. TYPOGRAPHY */
 .main-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 10vw, 5.5rem);
+    font-size: clamp(2.5rem, 10vw, 5rem);
     color: var(--gold);
-    text-transform: uppercase;
-    text-shadow: 3px 3px 20px rgba(0,0,0,0.8);
-    margin-bottom: 10px;
+    text-shadow: 4px 4px 15px #000;
 }
 
-.sub-tagline {
-    color: var(--white);
-    font-size: 1.5rem;
-    background: rgba(128, 0, 0, 0.6);
-    padding: 5px 30px;
-    border-radius: 50px;
-    display: inline-block;
-}
+.tagline { color: white; font-size: 1.5rem; margin-top: 10px; }
 
-/* --- Content Sections --- */
-section {
-    padding: 100px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
+/* 6. SECTIONS */
+.section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
+.section-heading { color: var(--maroon); font-size: 2.5rem; margin-bottom: 40px; }
+.color-bg { background-color: #FFEFD5; border-radius: 60px; }
 
-.section-title {
-    font-size: 2.8rem;
-    color: var(--primary);
-    margin-bottom: 50px;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 5px;
-    background: var(--accent);
-    margin: 15px auto;
-}
-
-/* --- Tour Cards Grid --- */
-.tour-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-    padding: 20px;
-}
-
+/* 7. CARDS & GRID */
+.grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
 .card {
-    background: var(--white);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: transform 0.4s ease;
-    border-bottom: 8px solid var(--accent);
+    background: white; width: 330px; border-radius: 20px; 
+    overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-bottom: 6px solid var(--saffron);
+}
+.card-img { height: 220px; background-size: cover; background-position: center; }
+.card-body { padding: 25px; }
+
+.btn {
+    background: var(--maroon); color: white; padding: 12px 25px; 
+    border: none; border-radius: 50px; cursor: pointer; font-weight: bold;
 }
 
-.card:hover {
-    transform: translateY(-15px);
-}
+/* 8. CREATIVE SECTIONS */
+.essentials-flex { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+.ess-item { background: white; padding: 25px; border-radius: 15px; border: 1px solid var(--saffron); width: 160px; }
 
-.card-img {
-    height: 250px;
-    background-size: cover;
-    background-position: center;
-}
+.testimonial { background: white; padding: 40px; border-radius: 20px; max-width: 700px; margin: 0 auto; border-left: 8px solid var(--maroon); font-style: italic; }
 
-.card-content {
-    padding: 30px;
-}
+footer { background: #1a1a1a; color: white; padding: 60px 20px; }
 
-.btn-more {
-    display: inline-block;
-    background: linear-gradient(45deg, var(--primary), var(--accent));
-    color: var(--white);
-    padding: 12px 35px;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    margin-top: 20px;
-}
-
-/* Creative Sections: Features */
-.features {
-    background: #fff0e0;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 50px;
-    border-radius: 30px;
-}
-
-.feat-item {
-    flex: 1;
-    min-width: 200px;
-}
-
-.feat-item i { font-size: 3rem; color: var(--accent); }
-
-/* Footer */
-footer {
-    background: #1a1a1a;
-    color: var(--white);
-    padding: 60px 20px;
-    margin-top: 50px;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Mobile Responsive */
+/* Mobile logic */
 @media (max-width: 768px) {
-    nav {
-        top: 20px;
-        right: 0;
-        left: 0;
-        justify-content: center;
-        width: 100%;
-    }
-    header { height: 70vh; }
+    .top-nav { right: 0; left: 0; justify-content: center; top: 15px; width: 100%; }
 }

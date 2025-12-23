@@ -1,15 +1,14 @@
 function toggleLanguage() {
-    // 1. Find the "body" of the website
     const body = document.body;
+    const btn = document.querySelector('.lang-switch');
     
-    // 2. Add or remove a special "telugu-mode" tag
-    body.classList.toggle('telugu-active');
+    // Toggle the class on the body
+    body.classList.toggle('eng-mode');
     
-    // 3. Change the button text
-    const btn = document.querySelector('.btn-toggle');
-    if (body.classList.contains('telugu-active')) {
-        btn.innerText = "Switch to English";
+    // Change the button text
+    if (body.classList.contains('eng-mode')) {
+        btn.innerText = "తెలుగులోకి మార్చండి";
     } else {
-        btn.innerText = "తెలుగులో చూడండి";
+        btn.innerText = "Switch to English";
     }
 }

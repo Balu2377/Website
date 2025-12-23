@@ -4,68 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Om Hara Hara Mahadev Tours</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body class="telugu-mode"> <header class="hero">
+<body>
+
+    <header class="hero" id="home">
         <nav class="top-nav">
             <div class="nav-links">
+                <a href="#home"><span class="te">హోమ్</span><span class="en">Home</span></a>
                 <a href="#about"><span class="te">మా గురించి</span><span class="en">About</span></a>
                 <a href="#tours"><span class="te">యాత్రలు</span><span class="en">Tours</span></a>
-                <a href="#essentials"><span class="te">సూచనలు</span><span class="en">Tips</span></a>
+                <a href="#gallery"><span class="te">గ్యాలరీ</span><span class="en">Gallery</span></a>
+                <a href="#contact"><span class="te">కాంటాక్ట్</span><span class="en">Contact</span></a>
             </div>
             <button id="langBtn" onclick="toggleLanguage()">English</button>
         </nav>
 
-        <div class="hero-content">
+        <div class="hero-center">
             <h1 class="main-title">Om Hara Hara Mahadev Tours</h1>
             <p class="tagline">
                 <span class="te">మీ నమ్మకమైన ఆధ్యాత్మిక ప్రయాణ భాగస్వామి</span>
                 <span class="en">Your Trusted Spiritual Travel Partner</span>
             </p>
+            <a href="#about" class="scroll-down">↓</a>
         </div>
     </header>
 
-    <section id="about" class="section">
-        <h2 class="section-heading"><span class="te">మా గురించి</span><span class="en">About Us</span></h2>
-        <p class="te">ఓం హర హర మహాదేవ్ టూర్స్ ద్వారా మేము భక్తులకు అత్యంత భక్తిశ్రద్ధలతో కూడిన యాత్రలను అందిస్తున్నాము.</p>
-        <p class="en">We provide spiritual journeys with utmost devotion through Om Hara Hara Mahadev Tours.</p>
-    </section>
-
-    <section id="tours" class="section color-bg">
-        <h2 class="section-heading"><span class="te">రాబోయే యాత్రలు</span><span class="en">Upcoming Tours</span></h2>
-        <div class="grid">
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=400');"></div>
-                <div class="card-body">
-                    <h3 class="te">కాశీ యాత్ర</h3><h3 class="en">Kashi Yatra</h3>
-                    <button class="btn"><span class="te">వివరాలు</span><span class="en">Details</span></button>
+    <section id="about" class="page-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="te">మా గురించి</span>
+                <span class="en">About Us</span>
+            </h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="te">ఓం హర హర మహాదేవ్ టూర్స్ ద్వారా మేము గత పదేళ్లుగా భక్తులకు అత్యంత భక్తిశ్రద్ధలతో కూడిన పుణ్యక్షేత్ర యాత్రలను ఏర్పాటు చేస్తున్నాము. మా యాత్రలు కేవలం పర్యటనలు మాత్రమే కాదు, అవి మీ జీవితంలో మధుర జ్ఞాపకాలుగా మిగిలిపోయే ఆధ్యాత్మిక అనుభవాలు.</p>
+                    <p class="en">At Om Hara Hara Mahadev Tours, we have been organizing spiritual pilgrimages with deep devotion for over a decade. Our trips are not just tours; they are divine experiences that stay as beautiful memories in your life.</p>
+                    <br>
+                    <p class="te">మా ప్రత్యేకత: ఇంటి భోజనం, సురక్షితమైన ప్రయాణం మరియు అనుభవజ్ఞులైన గైడ్స్ పర్యవేక్షణ.</p>
+                    <p class="en">Our Speciality: Home-style food, safe travel arrangements, and guidance from experienced spiritual leaders.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="essentials" class="section">
-        <h2 class="section-heading"><span class="te">యాత్రా సూచనలు</span><span class="en">Pilgrim Essentials</span></h2>
-        <div class="essentials-flex">
-            <div class="ess-item">🎒<br><span class="te">తక్కువ లగేజీ</span><span class="en">Light Luggage</span></div>
-            <div class="ess-item">🆔<br><span class="te">ఆధార్ కార్డు</span><span class="en">Aadhar Card</span></div>
-            <div class="ess-item">💊<br><span class="te">మందులు</span><span class="en">Medicines</span></div>
+    <section id="tours" class="page-section saffron-bg">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="te">రాబోయే యాత్రలు</span>
+                <span class="en">Upcoming Tours</span>
+            </h2>
+            
+            <div class="tour-grid">
+                <div class="tour-card">
+                    <div class="banner-space">
+                        <span class="te">యాత్ర 1 బ్యానర్</span><span class="en">Tour 1 Banner</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="te">కాశీ - గయ - ప్రయాగ్రాజ్</h3>
+                        <h3 class="en">Kashi - Gaya - Prayagraj</h3>
+                        <p class="te">12 రోజుల పవిత్ర యాత్ర</p>
+                        <p class="en">12 Days Holy Pilgrimage</p>
+                        <button class="btn"><span class="te">వివరాలు</span><span class="en">Details</span></button>
+                    </div>
+                </div>
+
+                <div class="tour-card">
+                    <div class="banner-space">
+                        <span class="te">యాత్ర 2 బ్యానర్</span><span class="en">Tour 2 Banner</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="te">అరుణాచల క్షేత్ర యాత్ర</h3>
+                        <h3 class="en">Arunachalam Special</h3>
+                        <p class="te">గిరి ప్రదక్షిణ ప్రత్యేకత</p>
+                        <p class="en">Giri Pradakshina Special</p>
+                        <button class="btn"><span class="te">వివరాలు</span><span class="en">Details</span></button>
+                    </div>
+                </div>
+
+                <div class="tour-card">
+                    <div class="banner-space">
+                        <span class="te">యాత్ర 3 బ్యానర్</span><span class="en">Tour 3 Banner</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="te">చార్ ధామ్ యాత్ర</h3>
+                        <h3 class="en">Char Dham Yatra</h3>
+                        <p class="te">హిమాలయ పుణ్యక్షేత్రాలు</p>
+                        <p class="en">Himalayan Holy Shrines</p>
+                        <button class="btn"><span class="te">వివరాలు</span><span class="en">Details</span></button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="section color-bg">
-        <h2 class="section-heading"><span class="te">భక్తుల అనుభవాలు</span><span class="en">Divine Experiences</span></h2>
-        <div class="testimonial">
-            <p class="te">"చాలా మంచి ఏర్పాట్లు. భోజనం ఇంటి రుచిలా ఉంది."</p>
-            <p class="en">"Excellent arrangements. Food tasted like home."</p>
-            <strong>- Rama Rao, Hyderabad</strong>
-        </div>
-    </section>
-
-    <footer id="contact">
+    <footer id="contact" class="footer">
         <h2 class="te">సంప్రదించండి</h2><h2 class="en">Contact Us</h2>
         <p>📞 +91 XXXXXXXXXX</p>
+        <p>📍 Om Hara Hara Mahadev Tours, Andhra Pradesh</p>
     </footer>
 
     <script src="script.js"></script>

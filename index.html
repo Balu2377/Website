@@ -5,93 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Om Hara Hara Mahadev Tours</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="telugu-mode"> <header class="hero">
+        <nav class="top-nav">
+            <div class="nav-links">
+                <a href="#about"><span class="te">మా గురించి</span><span class="en">About</span></a>
+                <a href="#tours"><span class="te">యాత్రలు</span><span class="en">Tours</span></a>
+                <a href="#essentials"><span class="te">సూచనలు</span><span class="en">Tips</span></a>
+            </div>
+            <button id="langBtn" onclick="toggleLanguage()">English</button>
+        </nav>
 
-<header>
-    <nav>
-        <a href="#about" class="nav-link"><span class="te">మా గురించి</span><span class="en">About</span></a>
-        <a href="#tours" class="nav-link"><span class="te">యాత్రలు</span><span class="en">Tours</span></a>
-        <a href="#essentials" class="nav-link"><span class="te">టిప్స్</span><span class="en">Tips</span></a>
-        <a href="#contact" class="nav-link"><span class="te">సంప్రదించండి</span><span class="en">Contact</span></a>
-        <button class="lang-switch" onclick="toggleLanguage()">Switch to English</button>
-    </nav>
+        <div class="hero-content">
+            <h1 class="main-title">Om Hara Hara Mahadev Tours</h1>
+            <p class="tagline">
+                <span class="te">మీ నమ్మకమైన ఆధ్యాత్మిక ప్రయాణ భాగస్వామి</span>
+                <span class="en">Your Trusted Spiritual Travel Partner</span>
+            </p>
+        </div>
+    </header>
 
-    <h1 class="main-title">Om Hara Hara Mahadev Tours</h1>
-    <p class="te header-sub">మీ విశ్వసనీయ ఆధ్యాత్మిక యాత్ర భాగస్వామి</p>
-    <p class="en header-sub">Your Trusted Spiritual Travel Partner</p>
-</header>
+    <section id="about" class="section">
+        <h2 class="section-heading"><span class="te">మా గురించి</span><span class="en">About Us</span></h2>
+        <p class="te">ఓం హర హర మహాదేవ్ టూర్స్ ద్వారా మేము భక్తులకు అత్యంత భక్తిశ్రద్ధలతో కూడిన యాత్రలను అందిస్తున్నాము.</p>
+        <p class="en">We provide spiritual journeys with utmost devotion through Om Hara Hara Mahadev Tours.</p>
+    </section>
 
-<section id="about" class="content-sec">
-    <h2 class="section-title"><span class="te">మా గురించి</span><span class="en">About Us</span></h2>
-    <div class="about-box">
-        <p class="te">ఓం హర హర మహాదేవ్ టూర్స్ ద్వారా మేము భక్తులకు అత్యంత భక్తిశ్రద్ధలతో కూడిన యాత్రలను అందిస్తున్నాము. మా తండ్రి గారి పర్యవేక్షణలో ప్రతి ఒక్కరికీ కుటుంబ సభ్యుడిలా సేవలు అందిస్తాము.</p>
-        <p class="en">Through Om Hara Hara Mahadev Tours, we offer spiritual journeys with utmost devotion. Under our father's supervision, we serve every pilgrim like a family member.</p>
-    </div>
-</section>
-
-<section id="tours" class="content-sec color-bg">
-    <h2 class="section-title"><span class="te">రాబోయే యాత్రలు</span><span class="en">Upcoming Tours</span></h2>
-    <div class="tour-grid">
-        <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=400" class="tour-img">
-            <div class="tour-info">
-                <h3 class="te">కాశీ - గయ - అయోధ్య</h3><h3 class="en">Kashi - Gaya - Ayodhya</h3>
-                <a href="tours/kashi.html" class="view-btn"><span class="te">పూర్తి వివరాలు</span><span class="en">Details</span></a>
+    <section id="tours" class="section color-bg">
+        <h2 class="section-heading"><span class="te">రాబోయే యాత్రలు</span><span class="en">Upcoming Tours</span></h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=400');"></div>
+                <div class="card-body">
+                    <h3 class="te">కాశీ యాత్ర</h3><h3 class="en">Kashi Yatra</h3>
+                    <button class="btn"><span class="te">వివరాలు</span><span class="en">Details</span></button>
+                </div>
             </div>
         </div>
-        <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=400" class="tour-img">
-            <div class="tour-info">
-                <h3 class="te">అరుణాచలం</h3><h3 class="en">Arunachalam</h3>
-                <a href="tours/arunachalam.html" class="view-btn"><span class="te">పూర్తి వివరాలు</span><span class="en">Details</span></a>
-            </div>
-        </div>
-        <div class="tour-card">
-            <img src="https://images.unsplash.com/photo-1624492707947-2f85a512d7fb?auto=format&fit=crop&w=400" class="tour-img">
-            <div class="tour-info">
-                <h3 class="te">చార్ ధామ్</h3><h3 class="en">Char Dham</h3>
-                <a href="tours/chardham.html" class="view-btn"><span class="te">పూర్తి వివరాలు</span><span class="en">Details</span></a>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section id="essentials" class="content-sec">
-    <h2 class="section-title"><span class="te">ప్రయాణ సూచనలు</span><span class="en">Pilgrim Essentials</span></h2>
-    <div class="essentials-grid">
-        <div class="ess-item">🎒<br><span class="te">తక్కువ లగేజీ</span><span class="en">Light Luggage</span></div>
-        <div class="ess-item">🆔<br><span class="te">ఆధార్ కార్డు</span><span class="en">Aadhar Card</span></div>
-        <div class="ess-item">💊<br><span class="te">వ్యక్తిగత మందులు</span><span class="en">Medicines</span></div>
-        <div class="ess-item">🙏<br><span class="te">ఓపిక, భక్తి</span><span class="en">Patience & Devotion</span></div>
-    </div>
-</section>
+    <section id="essentials" class="section">
+        <h2 class="section-heading"><span class="te">యాత్రా సూచనలు</span><span class="en">Pilgrim Essentials</span></h2>
+        <div class="essentials-flex">
+            <div class="ess-item">🎒<br><span class="te">తక్కువ లగేజీ</span><span class="en">Light Luggage</span></div>
+            <div class="ess-item">🆔<br><span class="te">ఆధార్ కార్డు</span><span class="en">Aadhar Card</span></div>
+            <div class="ess-item">💊<br><span class="te">మందులు</span><span class="en">Medicines</span></div>
+        </div>
+    </section>
 
-<section class="content-sec color-bg">
-    <h2 class="section-title"><span class="te">భక్తుల అనుభవాలు</span><span class="en">Divine Experiences</span></h2>
-    <div class="testimonial-slider">
-        <div class="testi-card">
-            <p>"చాలా మంచి ఏర్పాట్లు. భోజనం ఇంటి రుచిలా ఉంది."</p>
+    <section class="section color-bg">
+        <h2 class="section-heading"><span class="te">భక్తుల అనుభవాలు</span><span class="en">Divine Experiences</span></h2>
+        <div class="testimonial">
+            <p class="te">"చాలా మంచి ఏర్పాట్లు. భోజనం ఇంటి రుచిలా ఉంది."</p>
             <p class="en">"Excellent arrangements. Food tasted like home."</p>
             <strong>- Rama Rao, Hyderabad</strong>
         </div>
-        <div class="testi-card">
-            <p>"మా నాన్నగారిని చాలా బాగా చూసుకున్నారు. ధన్యవాదాలు."</p>
-            <p class="en">"They took great care of my father. Thank you."</p>
-            <strong>- Lakshmi, Vijayawada</strong>
-        </div>
-    </div>
-</section>
+    </section>
 
-<footer id="contact" class="footer">
-    <h2 class="te">మమ్మల్ని సంప్రదించండి</h2><h2 class="en">Contact Us</h2>
-    <p>📍 Om Hara Hara Mahadev Tours, Telangana/AP</p>
-    <div class="contact-links">
-        <a href="tel:+91 9441522677" class="call-btn">📞 Call Now</a>
-        <a href="https://wa.me/9441522677" class="wa-btn">💬 WhatsApp</a>
-    </div>
-</footer>
+    <footer id="contact">
+        <h2 class="te">సంప్రదించండి</h2><h2 class="en">Contact Us</h2>
+        <p>📞 +91 XXXXXXXXXX</p>
+    </footer>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

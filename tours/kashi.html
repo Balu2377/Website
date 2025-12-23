@@ -1,115 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="te">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>12 Days Kashi Yatra | Om Hara Hara Mahadev Tours</title>
-    <link rel="stylesheet" href="../style.css">
-    <style>
-        .detail-container { max-width: 850px; margin: 20px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
-        .itinerary-day { border-left: 4px solid #FF9933; padding: 10px 20px; margin-bottom: 20px; background: #fffaf4; border-radius: 0 10px 10px 0; }
-        .day-num { font-weight: bold; color: #003366; font-size: 1.2rem; margin-bottom: 5px; }
-        .booking-box { background: #003366; color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px; }
-        .whatsapp-btn { background: #25D366; color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: bold; font-size: 1.1rem; }
-    </style>
+    <title>Kashi Yatra - 12 Days Itinerary</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-    <h1 class="logo-title">Om Hara Hara Mahadev Tours</h1>
-    <button class="btn-toggle" onclick="toggleLanguage()">తెలుగు / English</button>
-</header>
+    <nav class="top-nav">
+        <a href="index.html" style="color:white; text-decoration:none; font-weight:bold;">← <span class="te">హోమ్</span><span class="en">Home</span></a>
+        <button id="langBtn" onclick="toggleLanguage()">English</button>
+    </nav>
 
-<div class="detail-container">
-    <h2 class="en">12 Days Kashi, Gaya & Prayagraj Yatra</h2>
-    <h2 class="te">12 రోజుల కాశీ, గయ మరియు ప్రయాగ్రాజ్ యాత్ర</h2>
+    <header class="detail-hero" style="background-image: url('kashi-banner.jpg');">
+        <div class="hero-text-box">
+            <h1 class="main-title">
+                <span class="te">కాశీ - గయ - ప్రయాగ్రాజ్ పుణ్యక్షేత్ర యాత్ర</span>
+                <span class="en">Kashi - Gaya - Prayagraj Holy Pilgrimage</span>
+            </h1>
+            <p><span class="te">సంపూర్ణ 12 రోజుల ఆధ్యాత్మిక ప్రయాణం</span><span class="en">Complete 12 Days Spiritual Journey</span></p>
+        </div>
+    </header>
 
-    <div class="itinerary-day">
-        <div class="day-num">Day 1 / 1వ రోజు</div>
-        <p class="en">Start journey from Railway Station.</p>
-        <p class="te">రైల్వే స్టేషన్ నుండి ప్రయాణం ప్రారంభం.</p>
+    
+
+    <div class="itinerary-section">
+        <div class="day-card">
+            <div class="day-label">DAY 1</div>
+            <div class="day-content">
+                <h3 class="te">ప్రయాణం ప్రారంభం</h3><h3 class="en">Journey Commencement</h3>
+                <p class="te">మీ నిర్ణీత రైల్వే స్టేషన్ నుండి కాశీకి రైలు ప్రయాణం ప్రారంభం.</p>
+                <p class="en">Departure from the designated railway station towards Kashi.</p>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-label">DAY 2</div>
+            <div class="day-content">
+                <h3 class="te">రైలు ప్రయాణం</h3><h3 class="en">Train Journey</h3>
+                <p class="te">రోజంతా రైలు ప్రయాణం మరియు సహ యాత్రికులతో పరిచయం.</p>
+                <p class="en">Full day train travel and interaction with fellow pilgrims.</p>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-label">DAY 3</div>
+            <div class="day-content">
+                <h3 class="te">కాశీ ఆగమనం</h3><h3 class="en">Arrival in Kashi</h3>
+                <p class="te">కాశీ చేరుకోవడం, హోటల్ వసతి మరియు సాయంత్రం గంగా హారతి దర్శనం.</p>
+                <p class="en">Arrival at Kashi, hotel check-in, and witnessing the grand Ganga Aarti.</p>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-label">DAY 4</div>
+            <div class="day-content">
+                <h3 class="te">కాశీ క్షేత్ర దర్శనం</h3><h3 class="en">Kashi Local Darshan</h3>
+                <p class="te">గంగా స్నానం, విశ్వనాథుని దర్శనం, విశాలాక్షి అమ్మవారు మరియు అన్నపూర్ణా దేవి దర్శనం.</p>
+                <p class="en">Ganga Bath, Vishwanath Temple, Vishalakshi, and Annapurna Devi Darshan.</p>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-label">DAY 5</div>
+            <div class="day-content">
+                <h3 class="te">ప్రయాగ్రాజ్ యాత్ర</h3><h3 class="en">Prayagraj Visit</h3>
+                <p class="te">త్రివేణి సంగమ స్నానం, అలోపి దేవి శక్తి పీఠం మరియు ఆనంద భవన్ దర్శనం.</p>
+                <p class="en">Holy dip at Triveni Sangam, Alopi Devi Temple, and Anand Bhavan visit.</p>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-label">DAY 6</div>
+            <div class="day-content">
+                <h3 class="te">గయ ప్రయాణం</h3><h3 class="en">Departure to Gaya</h3>
+                <p class="te">కాశీ నుండి గయకు బస్సు ద్వారా ప్రయాణం. బుద్ధగయ దర్శనం.</p>
+                <p class="en">Travel from Kashi to Gaya by bus. Visit Bodh Gaya (Maha Bodhi Temple).</p>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-label">DAY 7</div>
+            <div class="day-content">
+                <h3 class="te">పితృ కార్యములు - గయ</h3><h3 class="en">Gaya Rituals</h3>
+                <p class="te">ఫల్గుణి నది తీరాన పితృ తర్పణాలు మరియు విష్ణు పాద దర్శనం.</p>
+                <p class="en">Ancestral rituals at Phalguni River and Vishnupad Temple Darshan.</p>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-label">DAY 8</div>
+            <div class="day-content">
+                <h3 class="te">వారణాసికి తిరుగు ప్రయాణం</h3><h3 class="en">Return to Varanasi</h3>
+                <p class="te">సారనాథ్ బౌద్ధ క్షేత్రం మరియు రామ నగర్ కోట దర్శనం.</p>
+                <p class="en">Visit Sarnath Buddhist site and Ramnagar Fort on the way back.</p>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-label">DAY 9</div>
+            <div class="day-content">
+                <h3 class="te">కాల భైరవ దర్శనం</h3><h3 class="en">Kala Bhairava Darshan</h3>
+                <p class="te">కాశీ కోటవాల్ కాల భైరవ ఆలయం మరియు స్థానిక షాపింగ్.</p>
+                <p class="en">Darshan of Kala Bhairava (The Guardian of Kashi) and local shopping.</p>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-label">DAY 10</div>
+            <div class="day-content">
+                <h3 class="te">తిరుగు ప్రయాణం ప్రారంభం</h3><h3 class="en">Return Journey Starts</h3>
+                <p class="te">కాశీ నుండి రైలు ద్వారా స్వగ్రామానికి తిరుగు ప్రయాణం ప్రారంభం.</p>
+                <p class="en">Departure from Kashi station for the return journey.</p>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-label">DAY 11</div>
+            <div class="day-content">
+                <h3 class="te">రైలు ప్రయాణం</h3><h3 class="en">Train Journey</h3>
+                <p class="te">స్వస్థలాలకు చేరుకునే మార్గంలో రైలు ప్రయాణం.</p>
+                <p class="en">Continued train journey towards home destination.</p>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-label">DAY 12</div>
+            <div class="day-content">
+                <h3 class="te">గమ్యస్థానానికి చేరుకోవడం</h3><h3 class="en">Arrival Home</h3>
+                <p class="te">మధుర స్మృతులతో క్షేమంగా మీ ఊరు చేరుకోవడం.</p>
+                <p class="en">Safe arrival at your destination with divine memories.</p>
+            </div>
+        </div>
     </div>
 
-    <div class="itinerary-day">
-        <div class="day-num">Day 2 / 2వ రోజు</div>
-        <p class="en">Train journey continuing...</p>
-        <p class="te">రైలు ప్రయాణం కొనసాగుతుంది...</p>
+    <div class="booking-footer">
+        <div>
+            <span class="te">బుకింగ్స్ కోసం:</span><span class="en">For Bookings:</span>
+            <strong style="font-size: 1.2rem; color: var(--gold); margin-left: 10px;">+91 XXXXXXXXXX</strong>
+        </div>
+        <button class="btn" style="margin: 0; background: var(--gold); color: var(--maroon);">
+            <span class="te">ఇప్పుడే కాల్ చేయండి</span><span class="en">Call Now</span>
+        </button>
     </div>
 
-    <div class="itinerary-day">
-        <div class="day-num">Day 3 / 3వ రోజు</div>
-        <p class="en">Arrival at Prayagraj. Triveni Sangam visit.</p>
-        <p class="te">ప్రయాగ్రాజ్ చేరుకోవడం. త్రివేణి సంగమ దర్శనం.</p>
-    </div>
-
-    <div class="itinerary-day">
-        <div class="day-num">Day 4 / 4వ రోజు</div>
-        <p class="en">Local temple visits in Prayagraj and travel to Kashi.</p>
-        <p class="te">ప్రయాగ్రాజ్ దర్శనీయ స్థలాలు మరియు కాశీకి ప్రయాణం.</p>
-    </div>
-
-    <div class="itinerary-day">
-        <div class="day-num">Day 5 / 5వ రోజు</div>
-        <p class="en">Kashi Vishwanath Temple Darshan and Ganga Aarti.</p>
-        <p class="te">కాశీ విశ్వనాథుని దర్శనం మరియు గంగా హారతి.</p>
-    </div>
-
-    <div class="itinerary-day">
-        <div class="day-num">Day 6 / 6వ రోజు</div>
-        <p class="en">Kashi local sightseeing (Sarnath, etc.).</p>
-        <p class="te">కాశీలోని ఇతర దర్శనీయ స్థలాల సందర్శన.</p>
-    </div>
-
-    <div class="itinerary-day">
-        <div class="day-num">Day 7 / 7వ రోజు</div>
-        <p class="en">Travel to Gaya and Bodhgaya.</p>
-        <p class="te">గయ మరియు బుద్ధగయకు ప్రయాణం.</p>
-    </div>
-
-    <div class="itinerary-day">
-        <div class="day-num">Day 8 / 8వ రోజు</div>
-        <p class="en">Vishnupad Temple rituals in Gaya.</p>
-        <p class="te">గయలోని విష్ణుపాద దేవాలయంలో పూజా కార్యక్రమాలు.</p>
-    </div>
-
-    <div class="itinerary-day">
-        <div class="day-num">Day 9 / 9వ రోజు</div>
-        <p class="en">Proceeding to Ayodhya Ram Mandir.</p>
-        <p class="te">అయోధ్య రామ మందిర దర్శనానికి ప్రయాణం.</p>
-    </div>
-
-    <div class="itinerary-day">
-        <div class="day-num">Day 10 / 10వ రోజు</div>
-        <p class="en">Ayodhya sightseeing and Sarayu River visit.</p>
-        <p class="te">అయోధ్య దర్శనం మరియు సరయు నది సందర్శన.</p>
-    </div>
-
-    <div class="itinerary-day">
-        <div class="day-num">Day 11 / 11వ రోజు</div>
-        <p class="en">Return journey starts.</p>
-        <p class="te">తిరుగు ప్రయాణం ప్రారంభం.</p>
-    </div>
-
-    <div class="itinerary-day">
-        <div class="day-num">Day 12 / 12వ రోజు</div>
-        <p class="en">Arrival at home station.</p>
-        <p class="te">గమ్యస్థానానికి చేరుకోవడం.</p>
-    </div>
-
-    <div class="booking-box">
-        <h3 class="en">Interested in this trip?</h3>
-        <h3 class="te">ఈ యాత్రలో పాల్గొనాలనుకుంటున్నారా?</h3>
-        <p class="en">Contact for price and seat availability:</p>
-        <p class="te">ధర మరియు సీట్ల వివరాల కోసం సంప్రదించండి:</p>
-        <a href="https://wa.me/9441522677" class="whatsapp-btn">Chat with Us / వాట్సాప్ చేయండి</a>
-    </div>
-
-    <p style="text-align: center; margin-top: 20px;">
-        <a href="../index.html" style="text-decoration: none; color: #003366;">← Back to Home / హోమ్ పేజీ</a>
-    </p>
-</div>
-
-<script src="../script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>

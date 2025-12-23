@@ -1,0 +1,9 @@
+body { font-family: sans-serif; margin: 0; background-color: #fdf5e6; }
+header { background: #003366; color: white; padding: 20px; text-align: center; border-bottom: 5px solid #FF9933; }
+.card { background: white; margin: 20px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+.btn-toggle { background: #FF9933; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-weight: bold; }
+
+/* Language switching logic */
+.te { display: none; }
+body.telugu-active .en { display: none; }
+body.telugu-active .te { display: block; }

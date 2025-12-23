@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="style.css"> </head>
+    <title>Om Hara Hara Mahadev Tours</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <header>
-        <h1>Om Hara Hara Mahadev Tours</h1>
-        <button class="btn-toggle" onclick="toggleLanguage()">తెలుగులో చూడండి</button>
-    </header>
 
-    <div class="card">
-        <h2 class="en">Kashi Yatra</h2>
-        <h2 class="te">కాశీ యాత్ర</h2>
-        <p class="en">Upcoming trip to Varanasi.</p>
-        <p class="te">త్వరలో జరగబోయే కాశీ యాత్ర.</p>
-        <a href="tours/kashi.html">View Details / వివరాలు</a>
+<header>
+    <div class="en">Blessings from the Divine</div>
+    <div class="te">దైవ ఆశీస్సులతో...</div>
+    <h1 class="logo-title">Om Hara Hara Mahadev Tours</h1>
+    
+    <div class="shortcuts">
+        <a href="#tours" class="shortcut-btn">View Trips</a>
+        <a href="tel:+91YOURNUMBER" class="shortcut-btn">Call Father</a>
+        <button class="btn-toggle" onclick="toggleLanguage()">తెలుగు / EN</button>
+    </div>
+</header>
+
+<div class="container" style="padding-bottom: 80px;">
+    <div class="card" id="tours">
+        <div style="padding: 20px;">
+            <h2 class="en" style="color:var(--temple-red)">🕉️ Maha Kashi Yatra</h2>
+            <h2 class="te" style="color:var(--temple-red)">🕉️ మహా కాశీ యాత్ర</h2>
+            <p class="en">12 Days | Kashi - Gaya - Prayagraj - Ayodhya</p>
+            <p class="te">12 రోజులు | కాశీ - గయ - ప్రయాగ్రాజ్ - అయోధ్య</p>
+            <a href="tours/kashi.html" class="shortcut-btn" style="background:var(--saffron); color:white;">See Full Brochure / వివరాలు</a>
+        </div>
     </div>
 
-    <script src="script.js"></script> </body>
+    </div>
+
+<div class="bottom-bar">
+    <a href="index.html" class="action-item">🏠<br>Home</a>
+    <a href="https://wa.me/919441522677" class="action-item">💬<br>WhatsApp</a>
+    <a href="tel:+919441522677" class="action-item">📞<br>Call Now</a>
+</div>
+
+<script src="script.js"></script>
+</body>
 </html>

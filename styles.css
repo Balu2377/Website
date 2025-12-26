@@ -364,58 +364,56 @@ body {
 }
 
 /* =========================================
-   7. MOBILE RESPONSIVENESS (HAMBURGER MENU)
+   7. MOBILE RESPONSIVENESS (FINAL FIX)
    ========================================= */
 @media (max-width: 768px) {
-    /* Show the hamburger icon on mobile */
+    /* 1. Show the Hamburger Icon */
     .menu-icon {
         display: flex !important;
+        position: relative;
         z-index: 5001;
     }
 
-    /* Hide the links by default and position them as a dropdown */
+    /* 2. Hide Navigation Container by default on mobile */
     .nav-container {
-        display: none; /* Hidden state */
-        flex-direction: column;
-        position: fixed;
+        display: none; /* Keeps it hidden until clicked */
+        position: fixed; /* Fixes it to the top of the screen */
         top: var(--nav-height);
         left: 0;
         width: 100%;
+        height: auto;
         background: var(--maroon);
-        padding: 30px 0;
+        padding: 20px 0;
+        flex-direction: column;
         z-index: 5000;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     }
 
-    /* THE FIX: This class is added by JavaScript to show the menu */
+    /* 3. SHOW THE MENU when JavaScript adds 'active' */
     .nav-container.active {
         display: flex !important;
     }
 
+    /* 4. Make links look like full-width buttons on mobile */
     .nav-links {
         flex-direction: column;
         width: 100%;
-        gap: 15px; 
+        gap: 15px;
     }
 
     .nav-links a {
-        width: 85%; /* Button-like appearance */
-        text-align: center;
+        display: block;
+        width: 85%; /* Centered buttons */
+        margin: 0 auto;
         padding: 15px;
         background: rgba(255, 255, 255, 0.1);
-        font-size: 1.1rem;
-        border: 1px solid rgba(255, 215, 0, 0.2);
+        text-align: center;
+        border: 1px solid rgba(255, 215, 0, 0.3);
     }
 
-    /* Footer goes from 3 columns to 1 column on Mobile */
+    /* 5. Footer Fix for Mobile */
     .footer-container {
         flex-direction: column !important;
         text-align: center !important;
-        gap: 40px;
-    }
-
-    .contact-left, .tours-middle, .address-right {
-        text-align: center !important;
-        width: 100%;
     }
 }

@@ -140,7 +140,113 @@ body {
     font-size: 1.5rem;
     font-weight: 400;
 }
+/* =========================================
+    ABOUT US SECTION (OVERLAP FIX)
+   ========================================= */
+.about-section {
+    background-color: #fff; /* Clean white background to contrast with maroon */
+    padding: 100px 5%;
+}
 
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Image left, Text right */
+    gap: 60px;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0px var(--maroon); /* Modern offset shadow */
+}
+
+.image-overlay-card {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: var(--gold);
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--maroon);
+    font-weight: bold;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.about-content .section-title.left-align {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.about-lead {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--maroon);
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Trust Icons Row */
+.trust-icons {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.icon-item {
+    text-align: center;
+}
+
+.icon-item .icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.icon-item p {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--maroon);
+}
+
+/* Responsive Fix for Mobile */
+@media (max-width: 768px) {
+    .about-container {
+        grid-template-columns: 1fr; /* Stack on top of each other */
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .about-content .section-title.left-align {
+        text-align: center;
+    }
+
+    .about-image img {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Simpler shadow for mobile */
+    }
+
+    .image-overlay-card {
+        right: 50%;
+        transform: translateX(50%); /* Center the gold card */
+        width: 80%;
+    }
+
+    .trust-icons {
+        justify-content: center;
+        gap: 15px;
+    }
+}
 /* =========================================
    5. TOUR CARDS & SECTIONS
    ========================================= */

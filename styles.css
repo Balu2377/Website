@@ -308,59 +308,76 @@ body {
     font-weight: bold;
     margin-top: 15px;
 }
-
 /* =========================================
-   6. FOOTER (FORCE 3-COLUMN LAYOUT)
+   FOOTER SORTING & WHATSAPP STYLES
    ========================================= */
 .footer {
     background: #111;
     color: white;
     padding: 60px 5% 20px;
-    width: 100%;
 }
 
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex !important; /* Forces side-by-side */
-    justify-content: space-between !important;
+    display: flex;
+    justify-content: space-between;
     align-items: flex-start;
     gap: 30px;
 }
 
-.footer-section {
-    flex: 1;
-}
-
-/* Specific Alignment for Desktop */
-.contact-left { text-align: left !important; }
-.tours-middle { text-align: center !important; }
-.address-right { text-align: right !important; }
-
-.footer-section h3 {
-    color: var(--gold);
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-}
-
-.footer-section ul {
-    list-style: none;
-}
-
-.footer-section a {
-    color: #ccc;
+/* WhatsApp Button Styling */
+.whatsapp-btn {
+    display: inline-block;
+    background-color: #25d366; /* Official WhatsApp Green */
+    color: white !important;
+    padding: 10px 18px;
+    border-radius: 50px;
     text-decoration: none;
-    transition: 0.3s;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: 0.3s ease;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.footer-section a:hover { color: var(--gold); }
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+    transform: scale(1.05);
+}
 
-.footer-bottom {
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #333;
-    text-align: center;
-    color: #888;
+/* =========================================
+   MOBILE SORTING FIX
+   ========================================= */
+@media (max-width: 768px) {
+    /* FORCES THE FOOTER TO BE SORTED IN A CENTERED STACK */
+    .footer-container {
+        flex-direction: column !important; /* Stacks sections vertically */
+        align-items: center !important;    /* Centers each section */
+        text-align: center !important;     /* Centers text inside sections */
+        gap: 50px !important;              /* Adds breathing room between blocks */
+    }
+
+    .footer-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Ensures content inside each section is centered */
+    }
+
+    .contact-left, .tours-middle, .address-right {
+        text-align: center !important;
+    }
+
+    .footer-section ul {
+        padding: 0;
+    }
+
+    /* Keeps WhatsApp button neat on mobile */
+    .whatsapp-btn {
+        width: auto;
+        min-width: 200px;
+    }
 }
 
 /* =========================================

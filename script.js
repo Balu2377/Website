@@ -10,3 +10,10 @@ function toggleLanguage() {
         btn.innerText = "English";
     }
 }
+function toggleMenu() {
+    const nav = document.getElementById('navContainer');
+    // Only works on mobile screens
+    if (window.innerWidth <= 768) {
+        nav.classList.toggle('active');
+    }
+}

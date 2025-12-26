@@ -18,7 +18,7 @@ body.english-mode .en { display: block !important; }
     --saffron: #FF8C00;
     --cream: #FFF9F0;
     --dark: #1a1a1a;
-    --nav-height: 70px;
+    --nav-height: 75px; /* Height of the top bar */
 }
 
 * {
@@ -36,19 +36,19 @@ body {
 }
 
 /* =========================================
-   3. NAVIGATION BAR (STRICT ALIGNMENT)
+   3. NAVIGATION BAR (FIXED ALIGNMENT)
    ========================================= */
 .top-nav {
     position: fixed;
     top: 0;
     width: 100%;
     height: var(--nav-height);
-    background: rgba(128, 0, 0, 0.98);
+    background: rgba(128, 0, 0, 0.98); /* Solid Maroon */
     padding: 0 5%;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between; /* Pushes button to left, menu to right */
     align-items: center;
-    z-index: 3000;
+    z-index: 4000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
@@ -60,7 +60,7 @@ body {
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
-    order: 1; /* Pinned to the Left */
+    order: 1; /* Left side */
 }
 
 .nav-container {
@@ -81,14 +81,16 @@ body {
     transition: 0.3s;
 }
 
-.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover {
+    color: var(--gold);
+}
 
 .menu-icon {
-    display: none;
+    display: none; /* Hidden on desktop */
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
-    order: 3; /* Pinned to the Right on Mobile */
+    order: 3;
 }
 
 .menu-icon span {
@@ -99,11 +101,11 @@ body {
 }
 
 /* =========================================
-   4. HERO SECTION (FIXED FOR OVERLAP)
+   4. HERO SECTION (OVERLAP FIX)
    ========================================= */
 .hero {
     min-height: 100vh;
-    padding-top: var(--nav-height); /* Prevents Nav from covering Title */
+    padding-top: var(--nav-height); /* Pushes content below Nav bar */
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                 url('siva.jpg') no-repeat center center;
     background-size: cover;
@@ -111,7 +113,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
     color: white;
     text-align: center;
 }
@@ -128,18 +129,12 @@ body {
     font-weight: 400;
 }
 
-.scroll-down {
-    position: absolute;
-    bottom: 30px;
-    font-size: 2.5rem;
-    color: var(--gold);
-    animation: bounce 2s infinite;
-}
-
 /* =========================================
-   5. TOURS & CONTENT SECTIONS
+   5. TOUR CARDS & SECTIONS
    ========================================= */
-.page-section { padding: 80px 5%; }
+.page-section {
+    padding: 80px 5%;
+}
 
 .section-title {
     font-size: 2.5rem;
@@ -164,12 +159,26 @@ body {
     transition: 0.3s;
 }
 
-.tour-card:hover { transform: translateY(-10px); }
+.tour-card:hover {
+    transform: translateY(-10px);
+}
 
-.banner-space { height: 200px; overflow: hidden; background: #eee; }
-.banner-space img { width: 100%; height: 100%; object-fit: cover; }
+.banner-space {
+    height: 200px;
+    background: #eee;
+    overflow: hidden;
+}
 
-.card-body { padding: 20px; text-align: center; }
+.banner-space img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
 
 .btn-link {
     display: inline-block;
@@ -178,55 +187,72 @@ body {
     padding: 10px 25px;
     text-decoration: none;
     border-radius: 5px;
-    margin-top: 15px;
     font-weight: bold;
+    margin-top: 15px;
 }
 
 /* =========================================
-   6. FOOTER (3-COLUMN LAYOUT)
+   6. FOOTER (FORCE 3-COLUMN LAYOUT)
    ========================================= */
 .footer {
     background: #111;
     color: white;
     padding: 60px 5% 20px;
+    width: 100%;
 }
 
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; 
-    gap: 40px;
+    display: flex !important; /* Forces side-by-side */
+    justify-content: space-between !important;
+    align-items: flex-start;
+    gap: 30px;
 }
 
-.footer-col { display: flex; flex-direction: column; }
+.footer-section {
+    flex: 1;
+}
 
-.contact-col { text-align: left; align-items: flex-start; }
-.tours-col { text-align: center; align-items: center; }
-.address-col { text-align: right; align-items: flex-end; }
+/* Specific Alignment for Desktop */
+.contact-left { text-align: left !important; }
+.tours-middle { text-align: center !important; }
+.address-right { text-align: right !important; }
 
-.footer-col h3 { color: var(--gold); margin-bottom: 15px; font-size: 1.2rem; }
-.footer-col ul { list-style: none; }
-.footer-col ul li { margin-bottom: 8px; }
-.footer-col a { color: #ccc; text-decoration: none; }
+.footer-section h3 {
+    color: var(--gold);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section a:hover { color: var(--gold); }
 
 .footer-bottom {
     margin-top: 40px;
     padding-top: 20px;
     border-top: 1px solid #333;
     text-align: center;
-    color: #777;
-    font-size: 0.9rem;
+    color: #888;
 }
 
 /* =========================================
-   7. MOBILE RESPONSIVENESS
+   7. MOBILE RESPONSIVENESS (HAMBURGER MENU)
    ========================================= */
 @media (max-width: 768px) {
     .menu-icon { display: flex; }
 
     .nav-container {
-        display: none;
+        display: none; /* Hidden until active */
         flex-direction: column;
         position: absolute;
         top: var(--nav-height);
@@ -238,22 +264,28 @@ body {
         box-shadow: 0 5px 15px rgba(0,0,0,0.5);
     }
 
-    .nav-container.active { display: flex; }
-
-    .nav-links { flex-direction: column; gap: 20px; }
-
-    /* Footer to 1 column */
-    .footer-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 30px;
+    .nav-container.active {
+        display: flex;
     }
-    .contact-col, .tours-col, .address-col {
-        text-align: center;
-        align-items: center;
+
+    .nav-links {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    /* Footer goes from 3 columns to 1 column on Mobile */
+    .footer-container {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+
+    .contact-left, .tours-middle, .address-right {
+        text-align: center !important;
+        width: 100%;
     }
 }
 
+/* Animation for scroll arrow */
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
     40% {transform: translateY(-10px);}

@@ -15,4 +15,23 @@ function toggleLanguage() {
         btn.innerText = "English";
     }
 }
+document.addEventListener("DOMContentLoaded", function() {
+    const slides = document.querySelectorAll(".slide");
+    let currentSlide = 0;
 
+    function nextSlide() {
+        // Remove active class from current slide
+        slides[currentSlide].classList.remove("active");
+        
+        // Move to next slide, or back to 0
+        currentSlide = (currentSlide + 1) % slides.length;
+        
+        // Add active class to new slide
+        slides[currentSlide].classList.add("active");
+    }
+
+    // Change image every 4000ms (4 seconds)
+    if(slides.length > 0) {
+        setInterval(nextSlide, 4000);
+    }
+});

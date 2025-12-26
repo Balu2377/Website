@@ -71,18 +71,30 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 12px; /* Reduced gap to fit buttons neatly */
+    align-items: center;
 }
 
+/* This replaces your old .nav-links a */
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
+    font-weight: 600;
+    padding: 8px 16px; /* Gives it the button shape */
+    border-radius: 5px; /* Rounds the corners */
+    background: rgba(255, 255, 255, 0.1); /* Light see-through background */
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 215, 0, 0.3); /* Subtle gold border */
+    font-size: 0.9rem;
+    white-space: nowrap; /* Keeps Telugu text on one line */
 }
 
+/* This replaces your old .nav-links a:hover */
 .nav-links a:hover {
-    color: var(--gold);
+    background: var(--gold);
+    color: var(--maroon);
+    transform: translateY(-2px); /* Makes it pop up slightly */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .menu-icon {
@@ -249,29 +261,24 @@ body {
    7. MOBILE RESPONSIVENESS (HAMBURGER MENU)
    ========================================= */
 @media (max-width: 768px) {
-    .menu-icon { display: flex; }
-
     .nav-container {
-        display: none; /* Hidden until active */
-        flex-direction: column;
-        position: absolute;
-        top: var(--nav-height);
-        left: 0;
-        width: 100%;
-        background: var(--maroon);
-        padding: 30px;
-        text-align: center;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    }
-
-    .nav-container.active {
-        display: flex;
+        padding: 40px 20px;
     }
 
     .nav-links {
         flex-direction: column;
-        gap: 25px;
+        width: 100%;
+        gap: 20px; /* More space between buttons on mobile */
     }
+
+    .nav-links a {
+        width: 80%; /* Buttons take up most of the width */
+        text-align: center;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.2);
+        font-size: 1.1rem;
+    }
+}
 
     /* Footer goes from 3 columns to 1 column on Mobile */
     .footer-container {

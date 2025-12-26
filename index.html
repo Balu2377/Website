@@ -11,15 +11,23 @@
 
     <header class="hero" id="home">
         <nav class="top-nav">
-            <div class="nav-links">
-                <a href="#home"><span class="te">హోమ్</span><span class="en">Home</span></a>
-                <a href="#about"><span class="te">మా గురించి</span><span class="en">About</span></a>
-                <a href="#tours"><span class="te">యాత్రలు</span><span class="en">Tours</span></a>
-                <a href="#gallery"><span class="te">గ్యాలరీ</span><span class="en">Gallery</span></a>
-                <a href="#contact"><span class="te">కాంటాక్ట్</span><span class="en">Contact</span></a>
-            </div>
-            <button id="langBtn" onclick="toggleLanguage()">English</button>
-        </nav>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="nav-container" id="navContainer">
+        <div class="nav-links">
+            <a href="#home" onclick="toggleMenu()"><span class="te">హోమ్</span><span class="en">Home</span></a>
+            <a href="#about" onclick="toggleMenu()"><span class="te">మా గురించి</span><span class="en">About</span></a>
+            <a href="#tours" onclick="toggleMenu()"><span class="te">యాత్రలు</span><span class="en">Tours</span></a>
+            <a href="#gallery" onclick="toggleMenu()"><span class="te">గ్యాలరీ</span><span class="en">Gallery</span></a>
+            <a href="#contact" onclick="toggleMenu()"><span class="te">కాంటాక్ట్</span><span class="en">Contact</span></a>
+        </div>
+        <button id="langBtn" onclick="toggleLanguage()">English</button>
+    </div>
+</nav>
         <div class="hero-center">
             <h1 class="main-title">Om Hara Hara Mahadev Tours</h1>
             <p class="tagline">

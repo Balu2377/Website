@@ -42,18 +42,31 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(128, 0, 0, 0.95); /* Maroon theme */
-    padding: 15px 5%;
+    background: rgba(128, 0, 0, 0.95);
+    padding: 10px 5%;
     display: flex;
-    justify-content: flex-end; /* Keeps items to the right on desktop */
+    /* This pushes the button to the left and everything else to the right */
+    justify-content: space-between; 
     align-items: center;
     z-index: 3000;
+}
+
+/* Ensure the button looks neat on the left */
+#langBtn {
+    background: var(--gold);
+    color: var(--maroon);
+    border: none;
+    padding: 8px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    order: 1; /* Forces it to stay first */
 }
 
 .nav-container {
     display: flex;
     align-items: center;
-    gap: 20px;
+    order: 2;
 }
 
 .nav-links {
@@ -65,61 +78,48 @@ body {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    padding: 5px 10px;
 }
 
-/* Hamburger Icon styling */
+/* Hamburger Icon */
 .menu-icon {
-    display: none; /* Hidden on Desktop */
+    display: none;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+    order: 3; /* Stays on the far right on mobile */
 }
 
 .menu-icon span {
     width: 25px;
     height: 3px;
-    background: #FFD700; /* Gold */
+    background: #FFD700;
     border-radius: 2px;
 }
 
 /* MOBILE RESPONSIVE RULES */
 @media (max-width: 768px) {
-    .top-nav {
-        justify-content: space-between; /* Icon left/right, Logo on other side if added */
-    }
-
     .menu-icon {
-        display: flex; /* Show icon on mobile */
+        display: flex; 
     }
 
     .nav-container {
-        display: none; /* Hide links by default on mobile */
+        display: none; 
         flex-direction: column;
         position: absolute;
-        top: 100%; /* Sits right under the nav bar */
+        top: 100%; 
         left: 0;
         width: 100%;
         background: #800000;
         padding: 20px;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+        text-align: center;
     }
 
-    /* This class is added by Javascript when you click the menu */
     .nav-container.active {
         display: flex;
     }
 
     .nav-links {
         flex-direction: column;
-        text-align: center;
-        width: 100%;
-    }
-
-    .nav-links a {
-        font-size: 1.2rem;
-        padding: 15px;
-        border-bottom: 1px solid rgba(255, 215, 0, 0.1);
     }
 }
 

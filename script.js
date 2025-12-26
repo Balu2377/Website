@@ -1,9 +1,7 @@
 function toggleMenu() {
     const nav = document.getElementById('navContainer');
-    // Only works on mobile screens
-    if (window.innerWidth <= 768) {
-        nav.classList.toggle('active');
-    }
+    // This adds or removes the "active" class when you click the hamburger
+    nav.classList.toggle('active');
 }
 function toggleLanguage() {
     const body = document.body;

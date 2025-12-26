@@ -1,0 +1,195 @@
+/* kashi-style.css - Specific Styles for the 12-Day Itinerary */
+
+:root {
+    --maroon: #800000;
+    --gold: #FFD700;
+    --cream: #FFF9F0;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Noto Sans Telugu', sans-serif;
+    background-color: var(--cream);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- LANGUAGE SWITCHER LOGIC --- */
+.en { display: none !important; }
+.te { display: block !important; }
+body.english-mode .te { display: none !important; }
+body.english-mode .en { display: block !important; }
+
+/* --- NAVIGATION --- */
+.top-nav {
+    background: var(--maroon);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#langBtn {
+    background: var(--gold);
+    color: var(--maroon);
+    border: none;
+    padding: 8px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* --- HERO BANNER --- */
+.detail-hero {
+    height: 55vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding: 60px 5%;
+    position: relative;
+    color: white;
+}
+
+/* Dark overlay to make text readable over the banner image */
+.detail-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+}
+
+.hero-text-box {
+    position: relative;
+    z-index: 2;
+}
+
+.main-title {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    color: var(--gold);
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+/* --- ITINERARY SECTION --- */
+.itinerary-section {
+    max-width: 900px;
+    margin: 40px auto 120px;
+    padding: 0 20px;
+}
+
+
+
+.day-card {
+    background: var(--white);
+    display: flex;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+.day-card:hover {
+    transform: scale(1.01);
+}
+
+.day-label {
+    background: var(--maroon);
+    color: var(--gold);
+    padding: 20px;
+    min-width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.3rem;
+    text-align: center;
+    border-right: 4px solid var(--gold);
+}
+
+.day-content {
+    padding: 25px;
+    flex-grow: 1;
+}
+
+.day-content h3 {
+    color: var(--maroon);
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.day-content p {
+    font-size: 1.05rem;
+    color: #444;
+}
+
+/* --- STICKY BOOKING FOOTER --- */
+.booking-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--maroon);
+    color: white;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2000;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
+}
+
+.btn {
+    padding: 12px 28px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: var(--gold);
+    color: var(--maroon);
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background: #fff;
+    color: var(--maroon);
+}
+
+/* --- MOBILE STYLES --- */
+@media (max-width: 768px) {
+    .day-card {
+        flex-direction: column;
+    }
+    
+    .day-label {
+        width: 100%;
+        padding: 12px;
+        border-right: none;
+        border-bottom: 3px solid var(--gold);
+    }
+
+    .booking-footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .main-title {
+        font-size: 1.8rem;
+    }
+}

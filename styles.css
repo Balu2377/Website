@@ -18,6 +18,7 @@ body.english-mode .en { display: block !important; }
     --saffron: #FF8C00;
     --cream: #FFF9F0;
     --dark: #1a1a1a;
+    --nav-height: 70px;
 }
 
 * {
@@ -35,23 +36,22 @@ body {
 }
 
 /* =========================================
-   3. HERO SECTION (FIRST PAGE - 100vh)
+   3. NAVIGATION BAR (STRICT ALIGNMENT)
    ========================================= */
-/* General Nav Styling */
 .top-nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(128, 0, 0, 0.95);
-    padding: 10px 5%;
+    height: var(--nav-height);
+    background: rgba(128, 0, 0, 0.98);
+    padding: 0 5%;
     display: flex;
-    /* This pushes the button to the left and everything else to the right */
     justify-content: space-between; 
     align-items: center;
     z-index: 3000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
-/* Ensure the button looks neat on the left */
 #langBtn {
     background: var(--gold);
     color: var(--maroon);
@@ -60,7 +60,7 @@ body {
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
-    order: 1; /* Forces it to stay first */
+    order: 1; /* Pinned to the Left */
 }
 
 .nav-container {
@@ -71,61 +71,53 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
     font-weight: 500;
+    transition: 0.3s;
 }
 
-/* Hamburger Icon */
+.nav-links a:hover { color: var(--gold); }
+
 .menu-icon {
     display: none;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
-    order: 3; /* Stays on the far right on mobile */
+    order: 3; /* Pinned to the Right on Mobile */
 }
 
 .menu-icon span {
     width: 25px;
     height: 3px;
-    background: #FFD700;
+    background: var(--gold);
     border-radius: 2px;
 }
 
-/* MOBILE RESPONSIVE RULES */
-@media (max-width: 768px) {
-    .menu-icon {
-        display: flex; 
-    }
-
-    .nav-container {
-        display: none; 
-        flex-direction: column;
-        position: absolute;
-        top: 100%; 
-        left: 0;
-        width: 100%;
-        background: #800000;
-        padding: 20px;
-        text-align: center;
-    }
-
-    .nav-container.active {
-        display: flex;
-    }
-
-    .nav-links {
-        flex-direction: column;
-    }
+/* =========================================
+   4. HERO SECTION (FIXED FOR OVERLAP)
+   ========================================= */
+.hero {
+    min-height: 100vh;
+    padding-top: var(--nav-height); /* Prevents Nav from covering Title */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('siva.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    text-align: center;
 }
 
-/* CENTERED TITLE */
 .main-title {
-    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-size: clamp(2.2rem, 8vw, 5rem);
     color: var(--gold);
     text-shadow: 3px 3px 15px rgba(0,0,0,0.8);
     margin-bottom: 10px;
@@ -141,29 +133,21 @@ body {
     bottom: 30px;
     font-size: 2.5rem;
     color: var(--gold);
-    text-decoration: none;
     animation: bounce 2s infinite;
 }
 
 /* =========================================
-   4. HOME PAGE SECTIONS & TOUR GRID
+   5. TOURS & CONTENT SECTIONS
    ========================================= */
-.page-section {
-    padding: 100px 5%;
-}
+.page-section { padding: 80px 5%; }
 
 .section-title {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     color: var(--maroon);
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     text-align: center;
 }
 
-.saffron-bg {
-    background-color: #FFEFD5;
-}
-
-/* THE 3 TOURS GRID */
 .tour-grid {
     display: flex;
     justify-content: center;
@@ -173,127 +157,36 @@ body {
 
 .tour-card {
     background: white;
-    width: 350px;
+    width: 320px;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-    display: flex;
-    flex-direction: column;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
 
-.tour-card:hover {
-    transform: translateY(-10px);
-}
+.tour-card:hover { transform: translateY(-10px); }
 
-.banner-space {
-    height: 200px;
-    background: #ddd;
-    overflow: hidden;
-}
+.banner-space { height: 200px; overflow: hidden; background: #eee; }
+.banner-space img { width: 100%; height: 100%; object-fit: cover; }
 
-.banner-space img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.card-body {
-    padding: 25px;
-    text-align: center;
-    flex-grow: 1;
-}
+.card-body { padding: 20px; text-align: center; }
 
 .btn-link {
     display: inline-block;
     background: var(--maroon);
     color: white !important;
-    padding: 12px 30px;
+    padding: 10px 25px;
     text-decoration: none;
     border-radius: 5px;
+    margin-top: 15px;
     font-weight: bold;
-    margin-top: 20px;
-    width: 100%;
-    transition: 0.3s;
-}
-
-.btn-link:hover {
-    background: var(--saffron);
 }
 
 /* =========================================
-   5. DETAIL PAGES (ITINERARY LAYOUT)
-   ========================================= */
-.detail-header {
-    height: 45vh;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-}
-
-.itinerary-container {
-    max-width: 900px;
-    margin: -50px auto 100px;
-    padding: 0 20px;
-    position: relative;
-    z-index: 10;
-}
-
-.day-box {
-    display: flex;
-    background: white;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    overflow: hidden;
-}
-
-.day-side {
-    background: var(--maroon);
-    color: var(--gold);
-    padding: 25px;
-    font-weight: bold;
-    font-size: 1.2rem;
-    min-width: 110px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.day-info {
-    padding: 25px;
-    text-align: left;
-}
-
-.day-info p {
-    font-size: 1.1rem;
-}
-
-.sticky-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: var(--maroon);
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    font-weight: bold;
-    z-index: 2000;
-    box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
-}
-
-/* =========================================
-   6. FOOTER & ANIMATIONS
+   6. FOOTER (3-COLUMN LAYOUT)
    ========================================= */
 .footer {
-    background: #1a1a1a;
+    background: #111;
     color: white;
     padding: 60px 5% 20px;
 }
@@ -302,75 +195,67 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    /* This creates 3 equal columns */
     grid-template-columns: 1fr 1fr 1fr; 
-    gap: 20px;
+    gap: 40px;
 }
 
-.footer-col {
-    display: flex;
-    flex-direction: column;
-}
+.footer-col { display: flex; flex-direction: column; }
 
-/* LEFT COLUMN ALIGNMENT */
-.contact-col {
-    text-align: left;
-    align-items: flex-start;
-}
+.contact-col { text-align: left; align-items: flex-start; }
+.tours-col { text-align: center; align-items: center; }
+.address-col { text-align: right; align-items: flex-end; }
 
-/* MIDDLE COLUMN ALIGNMENT */
-.tours-col {
-    text-align: center;
-    align-items: center;
-}
+.footer-col h3 { color: var(--gold); margin-bottom: 15px; font-size: 1.2rem; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 8px; }
+.footer-col a { color: #ccc; text-decoration: none; }
 
-/* RIGHT COLUMN ALIGNMENT */
-.address-col {
-    text-align: right;
-    align-items: flex-end;
-}
-
-.footer-col h3 {
-    color: var(--gold);
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-}
-
-.footer-col ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-col ul li {
-    margin-bottom: 8px;
-}
-
-.footer-col a {
-    color: #ccc;
-    text-decoration: none;
-}
-
-/* BOTTOM COPYRIGHT SECTION */
 .footer-bottom {
     margin-top: 40px;
     padding-top: 20px;
     border-top: 1px solid #333;
-    text-align: center; /* Copyright at the very bottom middle */
-    width: 100%;
-    color: #888;
+    text-align: center;
+    color: #777;
     font-size: 0.9rem;
 }
 
-/* Mobile View: Stack them vertically when the screen is small */
+/* =========================================
+   7. MOBILE RESPONSIVENESS
+   ========================================= */
 @media (max-width: 768px) {
+    .menu-icon { display: flex; }
+
+    .nav-container {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        background: var(--maroon);
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+
+    .nav-container.active { display: flex; }
+
+    .nav-links { flex-direction: column; gap: 20px; }
+
+    /* Footer to 1 column */
     .footer-container {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 30px;
     }
     .contact-col, .tours-col, .address-col {
         text-align: center;
         align-items: center;
-        margin-bottom: 30px;
     }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
 }

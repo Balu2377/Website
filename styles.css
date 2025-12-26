@@ -37,27 +37,23 @@ body {
 /* =========================================
    3. HERO SECTION (FIRST PAGE - 100vh)
    ========================================= */
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                url('siva.jpg') no-repeat center center/cover;
+/* General Nav Styling */
+.top-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(128, 0, 0, 0.95); /* Maroon theme */
+    padding: 15px 5%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end; /* Keeps items to the right on desktop */
     align-items: center;
-    position: relative;
-    color: white;
-    text-align: center;
+    z-index: 3000;
 }
 
-/* TOP RIGHT NAVIGATION */
-.top-nav {
-    position: absolute;
-    top: 30px;
-    right: 5%;
+.nav-container {
     display: flex;
-    gap: 20px;
     align-items: center;
-    z-index: 1000;
+    gap: 20px;
 }
 
 .nav-links {
@@ -68,29 +64,63 @@ body {
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    padding: 8px 15px;
-    border: 1px solid var(--gold);
-    border-radius: 5px;
-    background: rgba(0,0,0,0.4);
-    transition: 0.3s;
+    font-weight: 500;
+    padding: 5px 10px;
 }
 
-.nav-links a:hover {
-    background: var(--gold);
-    color: var(--maroon);
-}
-
-#langBtn {
-    background: var(--gold);
-    color: var(--maroon);
-    border: none;
-    padding: 10px 20px;
-    font-weight: bold;
+/* Hamburger Icon styling */
+.menu-icon {
+    display: none; /* Hidden on Desktop */
+    flex-direction: column;
+    gap: 5px;
     cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s;
+}
+
+.menu-icon span {
+    width: 25px;
+    height: 3px;
+    background: #FFD700; /* Gold */
+    border-radius: 2px;
+}
+
+/* MOBILE RESPONSIVE RULES */
+@media (max-width: 768px) {
+    .top-nav {
+        justify-content: space-between; /* Icon left/right, Logo on other side if added */
+    }
+
+    .menu-icon {
+        display: flex; /* Show icon on mobile */
+    }
+
+    .nav-container {
+        display: none; /* Hide links by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Sits right under the nav bar */
+        left: 0;
+        width: 100%;
+        background: #800000;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    }
+
+    /* This class is added by Javascript when you click the menu */
+    .nav-container.active {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    }
 }
 
 /* CENTERED TITLE */

@@ -265,25 +265,46 @@ body {
 .footer {
     background: #1a1a1a;
     color: white;
-    padding: 60px 5%;
-    text-align: left; /* Changes from center to left alignment */
+    padding: 60px 5% 20px;
 }
 
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid; /* This creates the side-by-side columns */
-    grid-template-columns: 2fr 1fr 1.5fr; /* Makes the first col wider, others neat */
-    gap: 50px;
+    display: grid;
+    /* This creates 3 equal columns */
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 20px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* LEFT COLUMN ALIGNMENT */
+.contact-col {
+    text-align: left;
+    align-items: flex-start;
+}
+
+/* MIDDLE COLUMN ALIGNMENT */
+.tours-col {
+    text-align: center;
+    align-items: center;
+}
+
+/* RIGHT COLUMN ALIGNMENT */
+.address-col {
+    text-align: right;
+    align-items: flex-end;
 }
 
 .footer-col h3 {
     color: var(--gold);
-    margin-bottom: 20px;
-    font-size: 1.3rem;
-    border-bottom: 2px solid var(--maroon);
-    display: inline-block;
-    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
 }
 
 .footer-col ul {
@@ -292,36 +313,34 @@ body {
 }
 
 .footer-col ul li {
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
-.footer-col ul li a {
+.footer-col a {
     color: #ccc;
     text-decoration: none;
-    transition: 0.3s;
 }
 
-.footer-col ul li a:hover {
-    color: var(--gold);
-}
-
+/* BOTTOM COPYRIGHT SECTION */
 .footer-bottom {
     margin-top: 40px;
     padding-top: 20px;
     border-top: 1px solid #333;
-    text-align: center; /* Only the copyright stays centered */
-    font-size: 0.9rem;
+    text-align: center; /* Copyright at the very bottom middle */
+    width: 100%;
     color: #888;
+    font-size: 0.9rem;
 }
 
-/* Fix for Mobile: Stack columns on top of each other */
+/* Mobile View: Stack them vertically when the screen is small */
 @media (max-width: 768px) {
     .footer-container {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 30px;
     }
-    .footer-col h3 {
-        border-bottom: none;
+    .contact-col, .tours-col, .address-col {
+        text-align: center;
+        align-items: center;
+        margin-bottom: 30px;
     }
 }
